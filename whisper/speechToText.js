@@ -3,8 +3,7 @@
 const fs = require('fs');
 const request = require('request');
 
-const OPENAI_API_KEY = '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';
-// const OPENAI_API_KEY = 'Your Key Here';
+const OPENAI_API_KEY = 'Your Key Here';
 
 const options = {
     method: "POST",
