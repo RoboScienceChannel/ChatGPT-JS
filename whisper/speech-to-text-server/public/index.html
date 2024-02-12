@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>TTS with ChatGPT in JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="box">
+			<img src="pics/rsLogo.jpeg" alt="" class="round-img">
+		</div>
+		<div class="box">
+			<h1>TTS with ChatGPT in JavaScript</h1>
+			<h1>A RoboScience Tutorial</h1>
+		</div>
+	</div>
+
+	<div style="max-width: 28em;">
+		<p>Convert recorded audio to:</p>
+		<select id="encodingTypeSelect">
+			<option value="wav">Waveform Audio (.wav)</option>
+			<option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
+			<option value="ogg">Ogg Vorbis (.ogg)</option>
+		</select>
+		<div id="controls">
+			<button id="recordButton">Record</button>
+			<button id="stopButton" disabled>Stop</button>
+		</div>
+		<div id="formats"></div>
+		<pre>Log</pre>
+		<pre id="log"></pre>
+
+		<pre>Recordings</pre>
+		<ol id="recordingsList"></ol>
+	</div>
+
+	<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+	<script src="js/WebAudioRecorder.min.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+
+</html>
