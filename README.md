@@ -8,7 +8,7 @@ Run the following command:
 
 npm install  
 
-#Text to Speech Demo Project
+# Text to Speech Demo Project
 Issue the following command: 
 
 node ./speechToText.js  
