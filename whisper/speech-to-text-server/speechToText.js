@@ -4,8 +4,7 @@ const request = require('request');
 let express = require('express');
 let app = express();
 const multer = require('multer');
-
-const OPENAI_API_KEY = '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';
+const OPENAI_API_KEY = require('./config.json')['OpenAIApiKey'];
 // const OPENAI_API_KEY = 'Your Key Here';
 
 //serve static files
@@ -28,7 +27,7 @@ app.post('/upload', upload.any(), async function (req, res) {
     // req.files contain your received files
     // req.body will hold the text fields, if there were any
     console.log('Uploaded files to local server: ', req.files);
-    
+
     const apiResponse = await text2SpeechGPT(req.files[0]);
     res.send(apiResponse.text);
     // res.send("Test Message");
@@ -50,7 +49,7 @@ async function text2SpeechGPT(file) {
                 "Content-Type": "multipart/form-data"
             },
             formData: {
-                "file": fs.createReadStream("./uploads/" + file.originalname + "." + file.mimetype.replaceAll('audio/','')),
+                "file": fs.createReadStream("./uploads/" + file.originalname + "." + file.mimetype.replaceAll('audio/', '')),
                 "model": "whisper-1"
             }
         };
